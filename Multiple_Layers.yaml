@@ -1,0 +1,27 @@
+# ---------------------------------------
+# Define an annotation task
+# This includes:
+# 1. a name (e.g., building_simple or rail_space, see below)
+# 2. a list of labels to be used for this task
+# ---------------------------------------
+tasks:
+  FBL:
+    #labels: ["no FBL", "FBL", "Exeptional FBL","Forest no FBL" , "Forest FBL" , "Sheet border", "Irregular"]
+    labels: ["Irregular","1 Field","2 F","3 F","4 F", "5 F","6 F", ">7 F", "All forest" , "Sheet border"]
+    #     add "1 F with FBL" for unacounted for inner-field FBL
+    #     add "Exesive FBL" for fields with > 7 fields lost
+     # 'irregular' acts as a catch-all for any features that don't fit into the other categories
+
+# ---------------------------------------
+# paths
+# You need to specify:
+# 1. a name (e.g., task_test_one_inch_maps_001, see below)
+# 2. patch_paths: path to all the patches to be annotated
+# 3. parent_paths: path to the original/parent maps/images (which were patchified)
+# 4. annot_dir: directory in which the outputs will be stored
+# ---------------------------------------
+paths:
+  twelve_counties_FBL:
+    patch_paths: "./12_county_images/*.png"
+    parent_paths: "./12_county_images/*.png"
+    annot_dir: "./annotations_12_counties"
